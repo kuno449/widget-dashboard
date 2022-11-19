@@ -4,12 +4,9 @@ import { CdkDropList, CdkDragDrop } from '@angular/cdk/drag-drop';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  dropped($event: CdkDragDrop<string>) {
-    console.log($event);
-  }
 
   @ViewChildren(CdkDropList) dropsQuery!: QueryList<CdkDropList>;
 
@@ -22,5 +19,9 @@ export class AppComponent {
     Promise.resolve().then(() => {
       this.drops = this.dropsQuery.toArray();
     })
+  }
+
+  dropped($event: CdkDragDrop<string>) {
+    console.log($event);
   }
 }
