@@ -1,4 +1,5 @@
-/** Based on the screen size, switch from standard to one column per row */
+import { Card } from "../../model/card";
+
 export const COLORS = [
   '#ea4335', '#4285f4', '#fbbc04', '#34a853', '#fa7b17',
   '#f538a0', '#a142f4', '#24c1e0', '#9aa0a6', '#5195ea',
@@ -9,7 +10,7 @@ export const COLORS = [
   '#fbe7a2', '#b3dfc3'
 ];
 
-export const MockDashboardCard = [
+export const MockDashboardCard: Card[] = [
   { title: 'Card 1', cols: 2, rows: 2, color: getColor()},
   { title: 'Card 2', cols: 1, rows: 1, color: getColor() },
   { title: 'Card 3', cols: 2, rows: 1, color: getColor() },

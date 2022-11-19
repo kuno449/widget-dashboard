@@ -1,6 +1,7 @@
 import { Component, ViewChildren, QueryList } from '@angular/core';
 import { CdkDropList, CdkDragEnter, moveItemInArray } from '@angular/cdk/drag-drop';
 import { MockDashboardCard } from "./mock-dashboard-card";
+import { Card } from "../../model/card";
 
 @Component({
   selector: 'app-dashboard',
@@ -14,7 +15,7 @@ export class DashboardComponent {
   @ViewChildren(CdkDropList) dropsQuery!: QueryList<CdkDropList>;
 
   drops!: CdkDropList[];
-  cards = MockDashboardCard;
+  cards: Card[] = MockDashboardCard;
 
   ngAfterViewInit() {
     this.dropsQuery.changes.subscribe(() => {
